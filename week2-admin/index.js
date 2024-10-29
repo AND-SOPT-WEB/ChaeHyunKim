@@ -76,7 +76,6 @@ renderTable();
 const filterBtn = document.querySelector("#filter-button");
 filterBtn.onclick = () => {
   const filterMembers = getMembers().filter(filterData);
-  console.log(filterMembers);
   renderTable(filterMembers);
 };
 
@@ -146,18 +145,20 @@ deleteBtn.onclick = () => {
   const deleteMembers = getMembers().filter(deleteData);
   alert("삭제되었습니다.");
   setMembers(deleteMembers);
+  allBtn.checked = false;
 };
+
 // 데이터 선택 여부를 판단하는 함수
 const deleteData = (data) => {
   const checkboxes = document.querySelectorAll(".checkbox");
-  let uncheckedID = [];
+  let checkedID = [];
   checkboxes.forEach((checkbox) => {
-    uncheckedID = checkbox.checked
-      ? uncheckedID
-      : [...uncheckedID, Number(checkbox.parentElement.parentElement.id)];
+    checkedID = checkbox.checked
+      ? [...checkedID, Number(checkbox.closest("tr").id)]
+      : checkedID;
   });
 
-  return uncheckedID.includes(data.id);
+  return !checkedID.includes(data.id);
 };
 
 /* 모달 */
