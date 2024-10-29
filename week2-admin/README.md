@@ -1,6 +1,6 @@
 ## 💡 기본 과제
 
-- [ ] 바닐라 JavaScript 사용. (React 등 라이브러리 사용 X)
+- [x] 바닐라 JavaScript 사용. (React 등 라이브러리 사용 X)
 
 1. **데이터**
 
