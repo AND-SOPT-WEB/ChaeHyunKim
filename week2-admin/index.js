@@ -133,9 +133,9 @@ const checkSelectAll = (checkbox) => {
   } else {
     let checkAllYN = false;
     checkboxes.forEach((checkbox) => {
-      checkAllYN = checkbox.checked ? true : false;
+      checkAllYN = checkbox.checked;
     });
-    allBtn.checked = checkAllYN ? true : false;
+    allBtn.checked = checkAllYN;
   }
 };
 
