@@ -126,19 +126,31 @@
         </form>
         <div class="filter-wrapper">
           <div class="input-wrapper name">
-            <p>이름</p>
-            <input id="add-name" placeholder="이름을 입력하세요" />
+            <label for="add-name">이름</label>
+            <input
+              id="add-name"
+              placeholder="이름을 입력하세요"
+              autocomplete="off"
+            />
           </div>
           <div class="input-wrapper en-name">
-            <p>영문이름</p>
-            <input id="add-en-name" placeholder="영문이름을 입력하세요" />
+            <label for="add-en-name">영문이름</label>
+            <input
+              id="add-en-name"
+              placeholder="영문이름을 입력하세요"
+              autocomplete="off"
+            />
           </div>
           <div class="input-wrapper github">
-            <p>GitHub</p>
-            <input id="add-github" placeholder="GitHub ID를 입력하세요" />
+            <label for="add-github">GitHub</label>
+            <input
+              id="add-github"
+              placeholder="GitHub ID를 입력하세요"
+              autocomplete="off"
+            />
           </div>
           <div class="input-wrapper gender">
-            <p>성별</p>
+            <label for="add-gender">성별</label>
             <select id="add-gender" required>
               <option value="" selected disabled hidden>성별 선택</option>
               <option value="male">남자</option>
@@ -146,7 +158,7 @@
             </select>
           </div>
           <div class="input-wrapper role">
-            <p>역할</p>
+            <label for="gender">역할</label>
             <select id="add-role" required>
               <option value="" selected disabled hidden>OB/YB 선택</option>
               <option value="OB">OB</option>
@@ -154,7 +166,7 @@
             </select>
           </div>
           <div class="input-wrapper first-group">
-            <p>1주차 금잔디조</p>
+            <label for="add-first-group">1주차 금잔디조</label>
             <input
               id="add-first-group"
               placeholder="1주차 금잔디조를 입력하세요 (1~9)"
@@ -162,7 +174,7 @@
             />
           </div>
           <div class="input-wrapper second-group">
-            <p>2주차 금잔디조</p>
+            <label for="add-second-group">2주차 금잔디조</label>
             <input
               id="add-second-group"
               placeholder="2주차 금잔디조를 입력하세요 (1~9)"

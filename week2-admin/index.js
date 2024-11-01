@@ -166,7 +166,6 @@ const modal = document.querySelector("dialog");
 document.querySelector("#add-button").onclick = () => {
   modal.showModal();
 };
-// 백드롭 클릭 시 모달 닫힘
 modal.addEventListener("click", (e) => {
   if (e.target.nodeName === "DIALOG") modal.close();
 });
@@ -174,8 +173,14 @@ modal.addEventListener("click", (e) => {
 /* 데이터 추가 */
 const addBtn = document.querySelector("#confirm-button");
 addBtn.onclick = () => {
+  const members = getMembers();
+  const newId =
+    members.length > 0
+      ? members.reduce((maxId, member) => Math.max(maxId, member.id), 0) + 1
+      : 1;
+
   const newMember = {
-    id: getMembers().length + 1,
+    id: newId,
     name: document.querySelector("#add-name").value,
     englishName: document.querySelector("#add-en-name").value,
     github: document.querySelector("#add-github").value,
@@ -191,7 +196,20 @@ addBtn.onclick = () => {
     setMembers([...getMembers(), newMember]);
     alert("추가되었습니다.");
   }
+  resetForm();
 };
+
+// 데이터 추가 폼 리셋 함수
+function resetForm() {
+  document.querySelector("#add-name").value = "";
+  document.querySelector("#add-en-name").value = "";
+  document.querySelector("#add-github").value = "";
+  document.querySelector("#add-gender").value = "";
+  document.querySelector("#add-role").value = "";
+  document.querySelector("#add-first-group").value = "";
+  document.querySelector("#add-second-group").value = "";
+}
+
 // null값 확인
 const isEmpty = (object) =>
   !Object.values(object).every((input) => input !== null && input !== "");
