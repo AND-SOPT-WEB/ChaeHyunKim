@@ -21,7 +21,6 @@ export const saveGameResult = (level, playTime) => {
 
   // 로컬 스토리지에 저장
   localStorage.setItem("gameResults", JSON.stringify(results));
-  console.log(results);
 };
 
 export const getGameResults = () => {

@@ -4,7 +4,7 @@ import GlobalStyle from "@styles/global";
 import Nav from "@components/nav/Nav";
 import GamePage from "@pages/GamePage";
 import RankingPage from "@pages/RankingPage";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import MainPage from "./pages/MainPage";
 import Modal from "@components/modal/Modal";
 import { saveGameResult } from "@utils/data";
@@ -55,6 +55,13 @@ function App() {
     setTime("0.00"); // 시간 초기화
     setToggleResetGame((prev) => !prev); // 게임 리렌더링
   };
+
+  // 게임 이탈할 경우 타이머 리셋
+  useEffect(() => {
+    stopTimer();
+    setIsOpen(false);
+    setTime("0.00");
+  }, [level, page]);
 
   return (
     <ThemeProvider theme={theme}>
