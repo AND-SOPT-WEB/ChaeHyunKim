@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Generators } from "@styles/generator";
 
-export const RankingHeader = styled.div`
+export const Header = styled.div`
   position: relative;
   ${Generators.flexGenerator()};
   width: 70rem;

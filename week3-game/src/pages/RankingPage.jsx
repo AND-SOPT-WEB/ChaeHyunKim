@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import * as S from "./RankingPage.style";
 import { getGameResults, resetGameResults } from "@utils/data";
+import RankingHeader from "@components/ranking/RankingHeader";
 import RankingTable from "@components/ranking/RankingTable";
 
 const RankingPage = () => {
@@ -13,10 +13,7 @@ const RankingPage = () => {
 
   return (
     <>
-      <S.RankingHeader>
-        <S.Title>랭킹</S.Title>
-        <S.Button onClick={handleReset}>초기화</S.Button>
-      </S.RankingHeader>
+      <RankingHeader handleReset={handleReset} />
       <RankingTable data={gameResult} />
     </>
   );
