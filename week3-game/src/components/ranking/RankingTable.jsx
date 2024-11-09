@@ -13,7 +13,7 @@ const RankingTable = ({ data }) => {
       </thead>
       <tbody>
         {data.map((d, index) => (
-          <S.TableRow key={index}>
+          <S.TableRow key={`rank-${index}`}>
             <S.TableCell>{new Date(d.date).toLocaleString()}</S.TableCell>
             <S.TableCell>레벨 {d.level}</S.TableCell>
             <S.TableCell>{d.playTime} 초</S.TableCell>

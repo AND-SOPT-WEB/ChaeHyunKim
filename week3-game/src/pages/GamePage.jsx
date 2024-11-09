@@ -65,7 +65,7 @@ const GamePage = React.memo(({ level, startTimer, stopTimer, toggleResetGame }) 
       <S.NumBoard $gridSize={gridSize}>
         {numbers.map((num, index) => (
           <S.NumBox
-            key={index}
+            key={`box-${index}`}
             $isEmpty={num.value === null}
             $isNew={num.isNew}
             onClick={() => num && handleNumClick(num, index)}
