@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import * as S from "./GamePage.style";
 import { shuffle } from "@utils/shuffle";
+import NumBoard from "@components/game/NumBoard";
 
 // 타이머가 돌아가도 렌더링되지 않도록 memo 사용
 const GamePage = React.memo(({ level, startTimer, stopTimer, toggleResetGame }) => {
@@ -62,18 +63,12 @@ const GamePage = React.memo(({ level, startTimer, stopTimer, toggleResetGame }) 
   return (
     <>
       <S.NumInfo>{nextNum > maxNum ? "게임 종료" : `다음 숫자 : ${nextNum}`}</S.NumInfo>
-      <S.NumBoard $gridSize={gridSize}>
-        {numbers.map((num, index) => (
-          <S.NumBox
-            key={`box-${index}`}
-            $isEmpty={num.value === null}
-            $isNew={num.isNew}
-            onClick={() => num && handleNumClick(num, index)}
-          >
-            {num.value}
-          </S.NumBox>
-        ))}
-      </S.NumBoard>
+      <NumBoard
+        numbers={numbers}
+        gridSize={gridSize}
+        nextNum={nextNum}
+        handleNumClick={handleNumClick}
+      />
     </>
   );
 });

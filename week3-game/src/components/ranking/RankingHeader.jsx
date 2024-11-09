@@ -1,4 +1,4 @@
-import * as S from "./RankingPage.style";
+import * as S from "./RankingHeader.style";
 
 const RankingHeader = ({ handleReset }) => {
   return (
